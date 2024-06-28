@@ -108,7 +108,7 @@ export class HomeComponent {
   }
 
   resetFilter(): void {
-    this.currentPage = 0;
+    this.currentPage = 1;
     this.isFilterOn = false;
     this.searchForm.setValue({searchField: ""})
     this.loadCharacters();
