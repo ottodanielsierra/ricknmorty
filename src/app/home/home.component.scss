@@ -1,0 +1,59 @@
+header {
+    background-image: url("/assets/ricknmortyheader.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.green-portal {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgb(0 0 0 / 35%));
+    padding-block: 100px;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.character-data {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    .card-content {
+        position: relative;
+    }
+    img {
+        transition: 0.5s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+}
+
+.cardHoverBackground {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    border-radius: 13px;
+    z-index: 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.card:hover {
+    * {
+        color: white;
+    }
+    .cardHoverBackground {
+        right: 0;
+        opacity: 1;
+    }
+    img {
+        transform: rotateY(360deg);
+    }
+}

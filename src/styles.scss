@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+// Sobrescribir variables
+$primary: #106f41; // Cambia a tu color primario deseado
+
+// Personalizar el color de los enlaces
+$link: #5daf45;
+$link-hover: darken($link, 10%);
+$link-visited: lighten($link, 10%);
+$link-focus: $link;
+
+@import "bulma/sass";
+
+:root {
+    --radius: 13px;
+    --spacing: 50px;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.pagination-link.is-current {
+    background-color: $primary;
+    color: #ffffff;
+    border-color: $primary;
+  }
+  
+.pagination-link.is-current:hover, .pagination-link.is-current:focus {
+    background-color: $link;
+    color: #ffffff;
+    border-color: $link;
+}

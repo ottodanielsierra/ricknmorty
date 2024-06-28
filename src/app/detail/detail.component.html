@@ -1,0 +1,82 @@
+<!-- Para este componente quise utilizar las directivas de las 
+versiones más recientes de angular para demostrar como funcionan -->
+
+<header class="hero is-large is-info has-text-light">
+  <div class="overlay">
+    <a href="/" class="go-back-button">
+      <span class="icon">
+        <i class="fas fa-arrow-left"></i>
+      </span>
+    </a>
+  </div>
+</header>
+
+@if (character) {
+  <div class="fade-zoom-enter">
+    <div class="character-image">
+      <img [src]="character.image" alt="Character Picture">
+    </div>
+    <div class="has-text-centered">
+      <h1 class="is-size-1">{{character.name}}</h1>
+      <b>Location:</b> {{character.location.name}}
+    </div>
+    <div class="container is-max-desktop section">
+      <div class="fixed-grid has-1-cols-mobile has-2-cols card p-2 has-background-dark">
+        <div class="grid">
+          <div class="cell px-5">
+            <table class="details-table">
+              <tr>
+                <th>Origin:</th>
+                <td>{{character.origin.name}}</td>
+              </tr>
+              <tr>
+                <th>Status:</th>
+                <td>{{character.status}}</td>
+              </tr>
+              <tr>
+                <th>Species:</th>
+                <td>{{character.species}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="cell px-5">
+            <table class="details-table">
+              <tr>
+                <th>Gender:</th>
+                <td>{{character.gender}}</td>
+              </tr>
+              <tr>
+                <th>Created:</th>
+                <td>{{character.created | date}}</td>
+              </tr>
+              @if (character.type) {
+                <tr>
+                  <th>Type:</th>
+                  <td>{{character.type}}</td>
+                </tr>
+              }
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>Episode</th>
+          <th>Name</th>
+          <th>Air Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (episode of character.episodes; track episode.id) {
+          <tr>
+            <td>{{ episode.episode }}</td>
+            <td>{{ episode.name }}</td>
+            <td>{{ episode.air_date }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}

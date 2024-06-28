@@ -1,0 +1,81 @@
+.go-back-button {
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: black;
+    font-size: large;
+    transition: 0.2s;
+}
+
+.go-back-button:hover {
+    background-color: black;
+    color: white;
+    animation: rotate360 0.2s ease-in-out;
+}
+
+img {
+    border-radius: 100%;
+    border: 5px solid white;
+}
+
+.character-image {
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+}
+
+header {
+    background-image: url("/assets/ram_banner.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    margin-bottom: var(--spacing);
+}
+
+.overlay {
+    background: linear-gradient(to top, rgb(67 67 67), rgb(255 255 255 / 67%));
+    padding-block: 150px;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.details-table {
+    width: 100%;
+    * {
+        color: white;
+    }
+}
+
+.details-table td {
+    text-align: right;
+}
+
+.fade-zoom-enter {
+    animation: fadeInZoom 0.5s ease-in-out forwards;
+}
+
+@keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+}
+
+@keyframes fadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
